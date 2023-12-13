@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BlogModule } from './blog/blog.module';
 import { AppResolver } from './app/app.resolver';
 
 @Module({
@@ -14,7 +13,7 @@ import { AppResolver } from './app/app.resolver';
     database: ':memory:',
     entities: ['dist/**/*.entity{.ts,.js}'],
     synchronize: true,
-  }), BlogModule,],
+  })],
   providers: [AppResolver]
 
 })
